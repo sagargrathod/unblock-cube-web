@@ -1,0 +1,190 @@
+/* ==========================================================================
+   src/components/ModeCard/ModeCard.css
+   Game Mode Showcase Card Component Styles
+   ========================================================================== */
+
+.modes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.mode-card {
+  background: var(--gradient-card-surface);
+  border: 1.5px solid var(--color-dark-teak);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-card-elevated);
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-golden-brown);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.mode-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-golden-brown);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), var(--shadow-gold-glow);
+}
+
+.mode-card:hover::before {
+  opacity: 1;
+  height: 6px;
+}
+
+.mode-card.span-two {
+  grid-column: span 2;
+}
+
+/* Mode-Specific Accents */
+.mode-card.mode-easy::before { background: var(--color-green-check); }
+.mode-card.mode-medium::before { background: var(--color-yellow-gold); }
+.mode-card.mode-hard::before { background: var(--color-orange-block); }
+.mode-card.mode-expert::before { background: var(--color-indigo-violet); }
+.mode-card.mode-classic::before { background: var(--gradient-signature-wood); }
+
+.mode-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.mode-badge {
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.mode-easy .mode-badge {
+  background: rgba(52, 168, 83, 0.2);
+  color: #55D478;
+  border: 1px solid var(--color-green-check);
+}
+
+.mode-medium .mode-badge {
+  background: rgba(255, 210, 63, 0.2);
+  color: #FFD23F;
+  border: 1px solid var(--color-yellow-gold);
+}
+
+.mode-hard .mode-badge {
+  background: rgba(255, 107, 53, 0.2);
+  color: #FFA07A;
+  border: 1px solid var(--color-orange-block);
+}
+
+.mode-expert .mode-badge {
+  background: rgba(139, 0, 255, 0.25);
+  color: #D488FF;
+  border: 1px solid var(--color-indigo-violet);
+}
+
+.mode-classic .mode-badge {
+  background: rgba(197, 138, 58, 0.25);
+  color: #F5E6D3;
+  border: 1px solid var(--color-golden-brown);
+}
+
+.mode-levels-count {
+  font-size: 0.85rem;
+  color: var(--color-light-teak);
+  font-weight: 600;
+}
+
+.mode-preview-board {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #1F1009;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-dark-teak);
+  margin-bottom: 22px;
+  padding: 12px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mode-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-light-pine);
+  margin-bottom: 8px;
+}
+
+.mode-subtitle {
+  font-size: 0.88rem;
+  color: var(--color-golden-bright);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.mode-desc {
+  font-size: 0.92rem;
+  color: var(--color-light-teak);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.mode-footer-meta {
+  border-top: 1px solid rgba(112, 66, 20, 0.35);
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--color-sandalwood);
+}
+
+.status-accessible { color: #55D478; }
+.status-strategic { color: #FFD23F; }
+.status-demanding { color: #FFA07A; }
+.status-mastery { color: #D488FF; }
+.status-timeless { color: #F5E6D3; }
+
+@media (max-width: 1080px) {
+  .modes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mode-card.span-two {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .modes-grid {
+    grid-template-columns: 1fr;
+  }
+  .mode-card.span-two {
+    grid-column: span 1;
+  }
+}

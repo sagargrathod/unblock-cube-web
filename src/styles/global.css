@@ -1,0 +1,184 @@
+/* ==========================================================================
+   src/styles/global.css - Reset, Typography & Layout Foundations
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-burnt-wood);
+  color: var(--color-cream-wood);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(197, 138, 58, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #2E1A12 0%, #24130C 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Subtle wood grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0px,
+    rgba(255, 255, 255, 0.1) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  z-index: 9999;
+}
+
+a {
+  color: var(--color-light-teak);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+a:hover {
+  color: var(--color-golden-bright);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Section Heading Helpers */
+.section-title-wrap {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.section-title-wrap.left-aligned {
+  text-align: left;
+  margin: 0 0 36px 0;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-golden-bright);
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--color-light-pine);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-lead {
+  font-size: 1.05rem;
+  color: var(--color-light-teak);
+  line-height: 1.6;
+}
+
+/* Back To Top Floating Action Button */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--gradient-signature-wood);
+  border: 1.5px solid var(--color-golden-brown);
+  color: #FFF;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(197, 138, 58, 0.5);
+}
+
+/* Common Keyframe Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 2px 6px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 0 14px rgba(234, 67, 53, 0.8);
+  }
+}
+
+@keyframes glow-target {
+  0% {
+    box-shadow: 
+      inset 0 2px 4px rgba(255, 255, 255, 0.4),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+      0 0 12px var(--color-red-glow),
+      0 6px 14px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: 
+      inset 0 2px 4px rgba(255, 255, 255, 0.5),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+      0 0 24px rgba(234, 67, 53, 0.75),
+      0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes fadeInPop {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}

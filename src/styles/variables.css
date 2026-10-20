@@ -1,0 +1,65 @@
+/* ==========================================================================
+   src/styles/variables.css - Centralized Design Tokens & Color Palettes
+   Directly mapped from src/constants/colors.js
+   ========================================================================== */
+
+:root {
+  /* Primary Wood Palettes (Dark Wood) */
+  --color-burnt-wood: #2E1A12;
+  --color-deep-wood: #3E2618;
+  --color-dark-card: #351F14;
+  --color-dark-oak: #6B3E26;
+  --color-walnut: #7B4B2A;
+  --color-classic-brown: #8B5A2B;
+  --color-dark-teak: #5A3825;
+  --color-border-teak: #704214;
+  --color-golden-brown: #C58A3A;
+  --color-golden-bright: #E2A755;
+  --color-dark-golden: #5A3B1A;
+
+  /* Light Wood Palettes (Text & Light Accents) */
+  --color-light-pine: #F5E6D3;
+  --color-cream-wood: #F8EDE3;
+  --color-light-teak: #DDB892;
+  --color-sandalwood: #F2D2A9;
+  --color-soft-oak: #EED5B7;
+
+  /* Puzzle Block Accents */
+  --color-red-target: #EA4335;
+  --color-red-glow: rgba(234, 67, 53, 0.45);
+  --color-orange-block: #FF6B35;
+  --color-yellow-gold: #FFD23F;
+  --color-gold-bright: #FFD700;
+  --color-green-check: #34A853;
+  --color-green-dark: #2E7D32;
+  --color-blue-block: #4285F4;
+  --color-indigo-violet: #8B00FF;
+
+  /* Brand Signature Gradients */
+  --gradient-signature-wood: linear-gradient(135deg, #7B4B2A 0%, #8B5A2B 50%, #C58A3A 100%);
+  --gradient-border-wood: linear-gradient(135deg, #C58A3A 0%, #5A3825 100%);
+  --gradient-card-surface: linear-gradient(180deg, rgba(53, 31, 20, 0.95) 0%, rgba(38, 20, 13, 0.98) 100%);
+  --gradient-hero-overlay: radial-gradient(circle at 50% 20%, rgba(197, 138, 58, 0.15) 0%, rgba(46, 26, 18, 0) 70%);
+  --gradient-red-cube: linear-gradient(135deg, #FF6659 0%, #EA4335 50%, #B31412 100%);
+  --gradient-wood-block-h: linear-gradient(180deg, #9C6635 0%, #7B4B2A 60%, #5E351B 100%);
+  --gradient-wood-block-v: linear-gradient(90deg, #9C6635 0%, #7B4B2A 60%, #5E351B 100%);
+
+  /* Shadows & Depths */
+  --shadow-bevel-block: inset 0 2px 3px rgba(255, 255, 255, 0.25), inset 0 -2px 3px rgba(0, 0, 0, 0.5), 0 6px 14px rgba(0, 0, 0, 0.45);
+  --shadow-board-groove: inset 0 6px 16px rgba(10, 5, 3, 0.85), 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-card-elevated: 0 12px 36px rgba(15, 8, 5, 0.55), 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-gold-glow: 0 0 24px rgba(197, 138, 58, 0.35);
+
+  /* Typography */
+  --font-heading: 'Outfit', 'Cinzel', sans-serif;
+  --font-logo: 'Cinzel', 'Outfit', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Layout Spacing & Radius */
+  --container-max-width: 1240px;
+  --header-height: 80px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}

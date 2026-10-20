@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="100%" height="100%" fill="none">
+  <rect width="240" height="160" rx="12" fill="#1C0E07"/>
+  <rect x="8" y="8" width="224" height="144" rx="8" fill="#24130A" stroke="#5A3825" stroke-width="1.5"/>
+  <path d="M228 65h6v30h-6z" fill="#FFD23F"/>
+  <rect x="226" y="67" width="4" height="26" rx="2" fill="#FFE57F"/>
+  <g filter="drop-shadow(0 4px 6px rgba(0,0,0,0.5))">
+    <rect x="50" y="65" width="70" height="30" rx="6" fill="#EA4335" stroke="#FFA494" stroke-width="1.5"/>
+    <rect x="70" y="78" width="30" height="4" rx="2" fill="rgba(255,255,255,0.6)"/>
+  </g>
+  <rect x="135" y="25" width="30" height="90" rx="6" fill="#8B5A2B" stroke="#C58A3A" stroke-width="1.5"/>
+  <rect x="175" y="45" width="30" height="70" rx="6" fill="#75471F" stroke="#A76D36" stroke-width="1.5"/>
+  <rect x="50" y="25" width="70" height="28" rx="6" fill="#8B5A2B" stroke="#C58A3A" stroke-width="1.5"/>
+  <rect x="15" y="25" width="25" height="70" rx="6" fill="#6B3E26" stroke="#8E5335" stroke-width="1.5"/>
+  <rect x="50" y="110" width="70" height="28" rx="6" fill="#75471F" stroke="#A76D36" stroke-width="1.5"/>
+</svg>

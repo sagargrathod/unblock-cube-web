@@ -1,0 +1,612 @@
+/* ==========================================================================
+   src/screens/HomeScreen/HomeScreen.css
+   Hero, Interactive 6x6 Wooden Board, Features, Steps, FAQ & Banner
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  padding: 80px 0 90px;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(197, 138, 58, 0.18) 0%, rgba(46, 26, 18, 0) 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(53, 31, 20, 0.85);
+  border: 1px solid var(--color-border-teak);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-golden-bright);
+  margin-bottom: 24px;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.hero-badge .sparkle {
+  color: var(--color-yellow-gold);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-light-pine);
+  margin-bottom: 22px;
+  letter-spacing: -0.5px;
+}
+
+.hero-title .highlight-wood {
+  background: linear-gradient(135deg, #F8EDE3 20%, #C58A3A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.18rem;
+  color: var(--color-light-teak);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.btn-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: rgba(53, 31, 20, 0.8);
+  color: var(--color-light-pine);
+  border: 1px solid var(--color-border-teak);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary-link:hover {
+  background: var(--color-dark-card);
+  border-color: var(--color-golden-brown);
+  color: var(--color-golden-bright);
+  transform: translateY(-2px);
+}
+
+.hero-quick-meta {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(112, 66, 20, 0.35);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-number {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-golden-bright);
+}
+
+.meta-label {
+  font-size: 0.8rem;
+  color: var(--color-light-teak);
+}
+
+/* 6x6 Wooden Board Chassis & Puzzle */
+.hero-visual-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wood-board-chassis {
+  width: 100%;
+  max-width: 440px;
+  background: linear-gradient(145deg, #4A2B18 0%, #351F14 50%, #29150B 100%);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: 
+    0 24px 60px rgba(10, 5, 2, 0.8),
+    inset 0 2px 4px rgba(255, 255, 255, 0.18),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.7);
+  border: 3px solid var(--color-border-teak);
+  position: relative;
+}
+
+.board-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.board-tag {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-golden-bright);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.board-stars {
+  display: flex;
+  gap: 4px;
+  color: var(--color-yellow-gold);
+  font-size: 0.95rem;
+}
+
+.puzzle-board-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #1F1009;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-board-groove);
+  border: 2px solid #5A351D;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.puzzle-exit-indicator {
+  position: absolute;
+  right: 0;
+  top: 33.33%;
+  height: 16.66%;
+  width: 8px;
+  background: var(--color-golden-brown);
+  border-radius: 4px 0 0 4px;
+  box-shadow: 0 0 10px rgba(197, 138, 58, 0.8);
+  z-index: 5;
+}
+
+.puzzle-exit-label {
+  position: absolute;
+  right: -36px;
+  top: 38%;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--color-golden-bright);
+  transform: rotate(90deg);
+  text-transform: uppercase;
+}
+
+.board-grid-slots {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 4px;
+}
+
+.grid-cell {
+  background: rgba(30, 15, 8, 0.7);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(90, 56, 37, 0.15);
+}
+
+.puzzle-blocks-layer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 4px;
+  pointer-events: auto;
+}
+
+.puzzle-block {
+  border-radius: 6px;
+  cursor: grab;
+  user-select: none;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.2s ease;
+  box-shadow: var(--shadow-bevel-block);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.puzzle-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+  border-radius: 5px 5px 0 0;
+  pointer-events: none;
+}
+
+.puzzle-block.block-red {
+  background: var(--gradient-red-cube);
+  border: 1.5px solid #FF8A80;
+  box-shadow: 
+    inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+    0 0 16px var(--color-red-glow),
+    0 6px 14px rgba(0, 0, 0, 0.5);
+  animation: glow-target 2.5s infinite alternate;
+  z-index: 10;
+}
+
+.puzzle-block.block-red .block-handle {
+  width: 24px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+}
+
+.puzzle-block.wood-h {
+  background: var(--gradient-wood-block-h);
+  border: 1px solid #AC7B47;
+}
+
+.puzzle-block.wood-v {
+  background: var(--gradient-wood-block-v);
+  border: 1px solid #AC7B47;
+}
+
+.puzzle-block:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.board-footer-controls {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+.board-move-counter {
+  font-size: 0.85rem;
+  color: var(--color-light-teak);
+}
+
+.board-move-counter strong {
+  color: var(--color-golden-bright);
+}
+
+.btn-board-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-golden-bright);
+  background: rgba(53, 31, 20, 0.9);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-teak);
+  transition: all 0.2s ease;
+}
+
+.btn-board-hint:hover {
+  background: var(--color-classic-brown);
+  color: #FFF;
+  border-color: var(--color-golden-brown);
+}
+
+.interactive-tip {
+  margin-top: 14px;
+  font-size: 0.78rem;
+  color: var(--color-light-teak);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.puzzle-victory-notice {
+  position: absolute;
+  inset: 10px;
+  background: rgba(28, 14, 7, 0.96);
+  border: 2px solid var(--color-golden-bright);
+  border-radius: var(--radius-md);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 30px rgba(197, 138, 58, 0.5);
+  animation: fadeInPop 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.puzzle-victory-notice h4 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-golden-bright);
+  margin-bottom: 8px;
+}
+
+.puzzle-victory-notice p {
+  font-size: 0.9rem;
+  color: var(--color-light-teak);
+  margin-bottom: 16px;
+}
+
+.victory-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-play-again {
+  background: var(--gradient-signature-wood);
+  color: #FFF;
+  border: 1px solid var(--color-golden-brown);
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-play-again:hover {
+  transform: scale(1.05);
+}
+
+.btn-play-again.accent-red {
+  background: var(--color-red-target);
+  border-color: #FFA494;
+}
+
+/* Sections */
+.features-section {
+  padding: 90px 0;
+  background: linear-gradient(180deg, rgba(38, 20, 13, 0.6) 0%, rgba(46, 26, 18, 0.9) 100%);
+  border-top: 1px solid rgba(112, 66, 20, 0.4);
+  border-bottom: 1px solid rgba(112, 66, 20, 0.4);
+}
+
+.modes-section,
+.steps-section {
+  padding: 90px 0;
+}
+
+/* ==========================================================================
+   FAQ Section Styles
+   ========================================================================== */
+.faq-section {
+  padding: 90px 0;
+  position: relative;
+}
+
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: linear-gradient(180deg, rgba(53, 31, 20, 0.75) 0%, rgba(38, 20, 13, 0.9) 100%);
+  border: 1px solid var(--color-dark-teak);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.faq-item:hover {
+  border-color: rgba(197, 138, 58, 0.6);
+  transform: translateY(-2px);
+}
+
+.faq-item.active {
+  background: linear-gradient(180deg, rgba(62, 38, 24, 0.95) 0%, rgba(46, 26, 18, 0.98) 100%);
+  border-color: var(--color-golden-brown);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(197, 138, 58, 0.15);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-light-pine);
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+.faq-trigger:hover {
+  color: var(--color-golden-bright);
+}
+
+.faq-item.active .faq-trigger {
+  color: var(--color-golden-bright);
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  flex-shrink: 0;
+  stroke: var(--color-golden-brown);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.3s ease;
+}
+
+.faq-trigger:hover .faq-chevron {
+  stroke: var(--color-golden-bright);
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  stroke: var(--color-golden-bright);
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-content p {
+  margin: 0;
+  padding: 0 28px 24px 28px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-light-teak);
+  border-top: 1px solid rgba(197, 138, 58, 0.12);
+  padding-top: 14px;
+}
+
+/* Pre-Footer Download CTA Banner */
+.cta-banner-section {
+  padding: 50px 0 90px;
+}
+
+.cta-banner-card {
+  background: linear-gradient(135deg, #4A2B18 0%, #2E1A12 50%, #1E0F08 100%);
+  border: 2px solid var(--color-golden-brown);
+  border-radius: var(--radius-xl);
+  padding: 60px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), var(--shadow-gold-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background: radial-gradient(circle, rgba(197, 138, 58, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-content {
+  max-width: 600px;
+}
+
+.cta-title {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-light-pine);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.cta-desc {
+  font-size: 1.05rem;
+  color: var(--color-light-teak);
+  line-height: 1.6;
+}
+
+@media (max-width: 1080px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  .hero-badge,
+  .hero-cta-group,
+  .hero-quick-meta {
+    justify-content: center;
+  }
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-visual-card {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 50px 0 60px;
+  }
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+  }
+  .cta-banner-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .cta-title {
+    font-size: 1.9rem;
+  }
+}

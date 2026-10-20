@@ -1,0 +1,120 @@
+/* ==========================================================================
+   src/components/Footer/Footer.css
+   ========================================================================== */
+
+.site-footer {
+  background: #1E0F09;
+  border-top: 1px solid var(--color-border-teak);
+  padding: 70px 0 35px;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 50px;
+}
+
+.footer-brand-desc {
+  font-size: 0.9rem;
+  color: var(--color-light-teak);
+  line-height: 1.65;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  max-width: 320px;
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-light-pine);
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link {
+  font-size: 0.92rem;
+  color: var(--color-light-teak);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--color-golden-bright);
+  transform: translateX(3px);
+}
+
+.footer-app-info {
+  background: rgba(46, 26, 18, 0.6);
+  border: 1px solid var(--color-border-teak);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  font-size: 0.85rem;
+  color: var(--color-light-teak);
+}
+
+.footer-app-info .app-name-badge {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-golden-bright);
+  display: block;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.footer-download-sub {
+  font-size: 0.88rem;
+  color: var(--color-light-teak);
+  margin-bottom: 16px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(112, 66, 20, 0.35);
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--color-light-teak);
+}
+
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-divider {
+  color: var(--color-border-teak);
+}
+
+@media (max-width: 1080px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
